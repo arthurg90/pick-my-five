@@ -1,9 +1,9 @@
 import React from 'react';
-
-const Footer = () => (
+//reusable footer component with a dynamic date copyright notice
+const Footer = ({notice, date}) => (
   <footer className="footer">
     <div className="container">
-      <p>Pick My Five designed by Arthur Graham ©2017</p>
+      <p>{notice}{date}</p>
     </div>
   </footer>
 );

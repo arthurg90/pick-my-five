@@ -1,8 +1,8 @@
 import React from 'react';
-
-const Header = () => (
+//A reusable header component taking props from the App parent component
+const Header = ({ title, subtitle }) => (
     <div className="page-header">
-        <h1>Pick My Five <small>Five a Side team selection done easy!</small></h1>
+        <h1> {title} {subtitle ? <small> {subtitle} </small> : null} </h1>
     </div>
 );
 
