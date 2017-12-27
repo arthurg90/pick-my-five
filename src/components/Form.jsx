@@ -18,7 +18,6 @@ class Form extends Component {
 		e.preventDefault();
 		arrayCopy.push(playerName);
 		this.setState({array: arrayCopy});
-		console.log(this.state.array);
 	}
 
 //below handles the event of typing into the input box so there's visual feedback
