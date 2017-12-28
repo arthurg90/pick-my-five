@@ -5,7 +5,7 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		// state in this case are the name values of the players and an empty array to store the list of players to be displayed
-		this.state = {value: '', array: [] };
+		this.state = {value: "", array: [] };
 
     this.handleChange = this.handleChange.bind(this);	//this is needed to bind the event handlers to THIS
     this.handleSubmit = this.handleSubmit.bind(this);

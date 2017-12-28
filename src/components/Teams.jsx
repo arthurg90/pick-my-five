@@ -11,12 +11,12 @@ class Teams extends Component {
 };
 
   clicked(e) {
-    e.preventDefault();
+    e.preventDefault();   //Prevent the page from refreshing on click
 		const arrayCopy = [...this.state.array];
-//logic for Putting the array of names into 2 teams randomly - on every click -> randomise the order of the array and then split into two teams....
+//logic for Putting the array of names into 2 teams randomly - on every click -> randomise the order of the array and then split into two teams....using Knuth shuffle function
     function shuffle(array) {
         let currentIndex = array.length, temporaryValue, randomIndex;
-        // While there are elements to shuffle...
+        // While there are remaining elements to shuffle...
         while (0 !== currentIndex) {
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -29,14 +29,15 @@ class Teams extends Component {
 
         return array;
     };
+
     let result = shuffle(arrayCopy);
     this.setState({array: result});
   };
 
 
 render() {
-  const team1 = this.state.array.slice(0,5);
-  const team2 = this.state.array.slice(5);
+  const team1 = this.state.array.slice(0,5);   //takes the first half of the array
+  const team2 = this.state.array.slice(5);    //takes the second half of the array
 
   const teamOne = team1.map((value, index) =>
     <li key={index}>
