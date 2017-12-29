@@ -1,8 +1,9 @@
 import { Map, List } from "immutable";
 
 const initial = Map({
-    value: "",
-    array: []
+    players: List(),
+    teamA: List(),
+    teamB: List()
 });
 
 export default initial;

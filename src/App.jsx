@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Form from "./components/Form"
-import Teams from "./components/Teams"
+import Form from "./containers/Form"
+import Teams from "./containers/Teams"
 
 
 const App = () => (

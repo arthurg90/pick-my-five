@@ -5,7 +5,7 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		// state in this case are the name values of the players and an empty array to store the list of players to be displayed
-		this.state = {value: "", array: [] };
+		this.state = {value: "", players: [] };
 
     this.handleChange = this.handleChange.bind(this);	//this is needed to bind the event handlers to THIS
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,10 +14,10 @@ class Form extends Component {
 //below handles the event behaviour for submitting items into the list
 	handleSubmit(e) {
 		const playerName = this.state.value;		//name value to be copied from the input
-		const arrayCopy = [...this.state.array];	//copy of the state array to be mutated
+		const playersCopy = [...this.state.players];	//copy of the state array to be mutated
 		e.preventDefault();
-		arrayCopy.push(playerName);
-		this.setState({array: arrayCopy});
+		playersCopy.push(playerName);
+		this.setState({players: playersCopy});
 	}
 
 //below handles the event of typing into the input box so there's visual feedback
@@ -26,7 +26,7 @@ class Form extends Component {
 	}
 
   render() {
-		const listNames = this.state.array.map((value, index) =>			//store {listItems} as a var for clarity
+		const listNames = this.state.players.map((value, index) =>			//store {listItems} as a var for clarity
 			<li key={index}>
 				{value}
 			</li>
