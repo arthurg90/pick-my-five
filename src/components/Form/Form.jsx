@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Input from "./Input";
+import PlayerList from "./PlayerList"
+
 
 // A statefull class component, state will need to be lifted later..TODO
 class Form extends Component {
@@ -31,20 +34,29 @@ class Form extends Component {
 				{value}
 			</li>
 		);
+
 //return the presentation of the list item of player roster
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit}>
-          <input className="form-control" type="text" placeholder="Submit a player name..." value={this.state.value} onChange={this.handleChange} />
-          <input className="btn btn-success" type="submit" value="+" onClick={ this.handleSubmit } />
-					<h3>Player Roster:</h3>
-					<ul>
-						{ listNames }
-					</ul>
+
+					<Input
+						onChange={ (e) => this.handleChange(e) }
+						value = { this.state.value }
+					/>
+
+					{/*have to handle number of list items by passing in props to the disabled attribute in input*/}
+
+          <input className="btn btn-success" type="submit" disabled={this.state.players.length >= 10} value="+" onClick={ this.handleSubmit } />
+
+					<PlayerList
+						listNames={listNames}
+					/>
+
         </form>
       </div>
     );
   }
-};
+}
 
 export default Form;

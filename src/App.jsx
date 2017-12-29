@@ -8,8 +8,11 @@ import Teams from "./containers/Teams"
 const App = () => (
   <div className="App">
     <Header title="Pick My Five" subtitle="Five a Side team selection done easy!" />
+
     <Form />
+
     <Teams />
+
     <Footer notice="Pick My Five designed by Arthur Graham ©" date={((new Date().getFullYear()))} />
   </div>
 );
