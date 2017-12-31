@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         // onSubmit is a function which dispatches an action "add"
-        onSubmit: (value) => dispatch(addPlayer(value)),
+        onSubmit: (data) => dispatch(addPlayer(data)),
     };
 };
 
