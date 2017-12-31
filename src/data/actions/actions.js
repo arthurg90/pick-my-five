@@ -1,9 +1,9 @@
 // action creators go here - simple actions that are repeated over and over
 
-export const addPlayer = (name) => {
+export const addPlayer = players => {
 	return {
 		type: "ADD_PLAYER",
-    name
+    players: players
 	};
 };
 

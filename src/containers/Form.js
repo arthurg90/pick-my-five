@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
-
-// import in the form component
 import Form from "../components/Form/Form";
+import { addPlayer } from "../data/actions/actions"
 
 // mapStateToProps is passed in the current state
 // it should return an object, which gets passed in as props to the connected component
@@ -11,6 +10,13 @@ const mapStateToProps = state => {
     };
 };
 
+const mapDispatchToProps = dispatch => {
+    return {
+        // onSubmit is a function which dispatches an action "add"
+        onSubmit: (value) => dispatch(addPlayer(value)),
+    };
+};
+
 // connect up mapStateToProps with the Form component
 // Forms' props are now controlled by this file
-export default connect(mapStateToProps)(Form);
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
