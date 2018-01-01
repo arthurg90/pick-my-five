@@ -1,21 +1,14 @@
 import React, { Component } from "react";
-import Player from '../containers/Player';
+import { Link } from "react-router-dom";
 
-class Players extends Component {
-	componentDidMount() {
-		this.props.onLoad();
-	}
 
-	render () {
-		const { players, onDelete, key } = this.props;
-		return(
-
+const Players = ({players}) => (
 			<div>
 				{players.count() ?
 					<ul className="list-group">
 						{players.map(player => (
-							<Player key={ player.get("id") } player={ player } onDelete={ onDelete } />
-
+              <li className="list-group-item" key={ player.get("id") }>
+              </li>
 						))}
 					</ul>
 				:
@@ -24,7 +17,6 @@ class Players extends Component {
 			</div>
 
 
-		)
-	}
-}
+);
+
 export default Players;

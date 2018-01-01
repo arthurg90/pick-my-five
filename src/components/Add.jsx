@@ -8,7 +8,7 @@ const fields = [
 
 const Add = ({ onSubmit }) => (
 	<div>
-		<Form onSubmit={ onSubmit } className="panel-body" fields={ fields } button="+"/>
+		<Form onSubmit={ onSubmit } className="panel-body" fields={ fields } />
 
 		<h3>Player Roster:</h3>
 

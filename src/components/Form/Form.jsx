@@ -6,7 +6,7 @@ class Form extends Component {
 		super(props);
 
 		//always bind this method
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.submit = this.submit.bind(this);
 
 		this.state = {
 		fields: props.fields.slice(),
@@ -14,24 +14,23 @@ class Form extends Component {
 };
 
 //below handles the event behaviour for submitting items into the list
+//submit is not currently working need to check why its not firing
 
-
-	handleSubmit(e) {
+	submit(e) {
 		e.preventDefault();
+		this.props.onSubmit();
 
-		const fields = this.state.fields;
+		// const fields = this.state.fields;
+    //
+		// let data = fields.reduce((data, {name, value}) => {
+		// 	data[name] = value;
+		// 	return data;
+		// }, {});
 
-		const data = fields.reduce((data, field) => {
-			data[field.name] = field.value;
-			return data;
-		}, {});
-
-		this.props.onSubmit(data);
-		console.log(data);
-	}
+}
 
 //below handles the event of typing into the input box so there's visual feedback
-	handleChange( e, i) {
+	change( e, i) {
 		let fields = this.state.fields.slice();
 		fields[i].value = e.target.value;
 		this.setState({fields: fields});
@@ -39,14 +38,14 @@ class Form extends Component {
 
   render() {
 
-		const { className, button } = this.props;
+		const { fields, className } = this.props;
 
     return (
-
 			<form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
+
 				{ this.state.fields.map(({ name, value, className }, i) => (
 					<Input
-					onChange={ (e) => this.handleChange(e, i) }
+					onChange={ (e) => this.change(e, i) }
 					value={ value }
 					key={ i }
 					name={ name }
@@ -55,10 +54,9 @@ class Form extends Component {
 
 				))}
 
-			<button className="btn btn-success"> { button } </button>
+			<input className="btn btn-success" type="submit" value="+" />
 
-
-        </form>
+      </form>
     )
   }
 }

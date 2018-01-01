@@ -7,17 +7,17 @@ const createPlayer = ({ player, id }) => {
 	})
 }
 
-const addPlayer = (state, data) => state.update("players", players => players.push(createPlayer(data)));
+const addPlayer = (state, player) => state.update("players", players => players.push(Map(player)));
 
 const setPlayers = (state, { players }) => state.get("players", players);
 
-// const setPlayer = (state, { player }) => state.update("players", players => {
-// 	let exists = players.find(p => p.get("id") === player.get("id"));
-// 	if (!exists) {
-// 		return players.push(player);
-// 	}
-// 	return players.map(p => p.get("id") === player.get("id") ? player : p)
-// });
+const setPlayer = (state, { player }) => state.update("players", players => {
+	let exists = players.find(p => p.get("id") === player.get("id"));
+	if (!exists) {
+		return players.push(player);
+	}
+	return players.map(p => p.get("id") === player.get("id") ? player : p)
+});
 
 const deletePlayer = (state, { id }) => {
 	return state.update("players", players => {
