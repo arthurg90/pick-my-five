@@ -1,6 +1,6 @@
 // action creators go here - simple actions that are repeated over and over
 
-export const addPlayer = ({player}, id) => {
+export const addPlayer = ({player, id}) => {
 	return {
 		type: "ADD_PLAYER",
 		player: player,

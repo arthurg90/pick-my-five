@@ -5,7 +5,7 @@ import { addPlayer } from "../data/actions/actions";
 const mapDispatchToProps = dispatch => {
     return {
         // onSubmit is a function which dispatches an action "add"
-        onSubmit: () => dispatch({ type: "ADD_PLAYER" }),
+        onSubmit: data => dispatch(addPlayer(data)),
     };
 };
 

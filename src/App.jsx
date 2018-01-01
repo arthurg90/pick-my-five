@@ -13,11 +13,9 @@ const App = () => (
 
     <Players />
 
-    {/* <Form /> */}
-
     {/* <Teams /> */}
 
-    <Footer notice="Pick My Five designed by Arthur Graham ©" date={((new Date().getFullYear()))} />
+    <Footer notice="Pick My Five designed by Arthur Graham © " date={((new Date().getFullYear()))} />
   </div>
 );
 

@@ -18,15 +18,15 @@ class Form extends Component {
 
 	submit(e) {
 		e.preventDefault();
-		this.props.onSubmit();
 
-		// const fields = this.state.fields;
-    //
-		// let data = fields.reduce((data, {name, value}) => {
-		// 	data[name] = value;
-		// 	return data;
-		// }, {});
+		const fields = this.state.fields;
 
+		let data = fields.reduce((data, {name, value}) => {
+			data[name] = value;
+			return data;
+		}, {});
+
+		this.props.onSubmit(data);
 }
 
 //below handles the event of typing into the input box so there's visual feedback
