@@ -1,23 +1,30 @@
 // action creators go here - simple actions that are repeated over and over
-//
-// export const addPlayer = (players => {
-// 	return {
-// 		type: "ADD_PLAYER",
-//     players
-// 	};
-// };
-//
 
-export const addPlayer = value => {
+export const addPlayer = ({player}, id) => {
 	return {
 		type: "ADD_PLAYER",
-		value,
+		player: player,
+		id: id
 	};
 };
 
-// export const generateTeams(data) => {
-// 	return {
-// 		type: "GENERATE_TEAMS",
-//     data
-// 	}
-// }
+export const deletePlayer = (id) => {
+	return {
+		type: "DELETE_PLAYER",
+		id: id,
+	};
+};
+
+export const setPlayer = player => {
+	return {
+		type: "SET_PLAYER",
+		player: player
+	};
+};
+
+export const setPlayers = players => {
+	return {
+		type: "SET_PLAYERS",
+		players: players
+	};
+};

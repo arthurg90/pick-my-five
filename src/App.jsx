@@ -1,15 +1,19 @@
 import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Form from "./containers/Form"
-import Teams from "./containers/Teams"
+import Players from "./containers/Players";
+import Teams from "./containers/Teams";
+import Add from "./containers/Add"
 
 
 const App = () => (
-  <div className="App">
+  <div className="container">
     <Header title="Pick My Five" subtitle="Five a Side team selection done easy!" />
+    <Add />
 
-    <Form />
+    <Players />
+
+    {/* <Form /> */}
 
     {/* <Teams /> */}
 
