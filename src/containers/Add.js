@@ -15,8 +15,3 @@ const mapDispatchToProps = dispatch => {
 // has to be the second argument - the first is for mapStateToProps
 // Add props are now controlled by this file
 export default connect(null, mapDispatchToProps)(Add); //(Add)
-
-//
-// onSubmit: (data) => {
-//   let action = addPlayer(data);
-//   dispatch(action);

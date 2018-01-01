@@ -5,7 +5,6 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 
-		//always bind this method
 		this.submit = this.submit.bind(this);
 
 		this.state = {
@@ -14,11 +13,9 @@ class Form extends Component {
 };
 
 //below handles the event behaviour for submitting items into the list
-//submit is not currently working need to check why its not firing
 
 	submit(e) {
-		e.preventDefault();
-
+		e.preventDefault(); //prevents default reloading behaviour
 		const fields = this.state.fields;
 
 		let data = fields.reduce((data, {name, value}) => {
@@ -26,23 +23,24 @@ class Form extends Component {
 			return data;
 		}, {});
 
+		// console.log(fields);
 		this.props.onSubmit(data);
 }
 
 //below handles the event of typing into the input box so there's visual feedback
-	change( e, i) {
+	change(e, i) {
 		let fields = this.state.fields.slice();
 		fields[i].value = e.target.value;
 		this.setState({fields: fields});
 	}
 
   render() {
-
 		const { fields, className } = this.props;
+
+		// const isEnabled = fields.value == "";
 
     return (
 			<form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
-
 				{ this.state.fields.map(({ name, value, className }, i) => (
 					<Input
 					onChange={ (e) => this.change(e, i) }
@@ -51,7 +49,6 @@ class Form extends Component {
 					name={ name }
 					className={ className }
 					/>
-
 				))}
 
 			<input className="btn btn-success" type="submit" value="+" />
@@ -64,12 +61,10 @@ class Form extends Component {
 export default Form;
 
 /*
-// listNames var
-// const listNames = this.state.players.map((value, index) =>
-// 	<li key={index}>
-// 		{value}
-// 	</li>
-// );
+const isEnabled =
+players.length <= 10;
+
+disabled={ !isEnabled }
 
 
 <input className="btn btn-success" type="submit" disabled={this.state.players.length >= 10} value="+" onClick={ this.onSubmit } />
