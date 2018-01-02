@@ -34,6 +34,9 @@ class Form extends Component {
 		this.setState({fields: fields});
 	}
 
+//the props below are passed down to the AddButton and Input component, the Add component passes fields props to the form and is destructured
+//TODO validate the input value so the button is disabled when the input is blank AND when there are 10 or more items
+
   render() {
 		const { fields, className } = this.props;
     return (
@@ -56,27 +59,3 @@ class Form extends Component {
 }
 
 export default Form;
-
-/*
-const isEnabled =
-players.length <= 10;
-
-disabled={ !isEnabled }
-
-
-<input className="btn btn-success" type="submit" disabled={this.state.players.length >= 10} value="+" onClick={ this.onSubmit } />
-
-
-//logic to display items in list
-// { players.count() ?
-// 		<ul className="list-group">
-// 			{ players.map((value, index) => (
-// 				<li key={index}>
-// 					{value}
-// 				</li>
-// 				))}
-// 		</ul>
-// 	:
-// 	<p>No Players to display</p>
-// }
-*/
