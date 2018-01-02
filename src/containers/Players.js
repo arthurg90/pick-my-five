@@ -8,12 +8,4 @@ const mapStateToProps = state => {
 	};
 };
 
-// const mapDispatchToProps = (dispatch, { id }) => {
-// 	return {
-// 		onDelete: () => dispatch(deletePlayer(id)),    //dispatches an action to delete the player
-// 		onLoad: () => dispatch(setPlayer(id)),
-// 	};
-// };
-
-
 export default connect(mapStateToProps)(Players);

@@ -6,6 +6,3 @@ const AddButton = ({players, value, type, className, fields}) => (
   </div>
 );
 export default AddButton;
-
-
-{/* <input className={ className } type={ type } value={ value } disabled={ players.count() >= 10 && fields.value == "" }/> */}

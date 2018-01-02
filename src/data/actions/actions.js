@@ -15,16 +15,17 @@ export const deletePlayer = id => {
 	};
 };
 
-export const setPlayer = player => {
-	return {
-		type: "SET_PLAYER",
-		player: player
-	};
-};
-
-export const setPlayers = players => {
-	return {
-		type: "SET_PLAYERS",
-		players: players
-	};
-};
+//TODO : delete?
+// export const setPlayer = player => {
+// 	return {
+// 		type: "SET_PLAYER",
+// 		player: player
+// 	};
+// };
+//
+// export const setPlayers = players => {
+// 	return {
+// 		type: "SET_PLAYERS",
+// 		players: players
+// 	};
+// };
