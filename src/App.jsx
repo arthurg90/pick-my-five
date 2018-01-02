@@ -9,11 +9,12 @@ import Add from "./containers/Add"
 const App = () => (
   <div className="container">
     <Header title="Pick My Five" subtitle="Five a Side team selection done easy!" />
+
     <Add />
 
     <Players />
 
-    {/* <Teams /> */}
+    <Teams />
 
     <Footer notice="Pick My Five designed by Arthur Graham © " date={((new Date().getFullYear()))} />
   </div>

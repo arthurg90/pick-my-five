@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Player from "../components/Player";
-import { deletePlayer } from "../data/actions/actions";
+import { deletePlayer } from "../data/actions/state";
 
 const mapDispatchToProps = (dispatch, { player } ) => {
 	return {

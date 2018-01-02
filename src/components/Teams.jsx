@@ -12,7 +12,7 @@ class Teams extends Component {
   clicked(e) {
     e.preventDefault();   //Prevent the page from refreshing on click
 		const playersCopy = [...this.state.players];
-//logic for Putting the players of names into 2 teams randomly - on every click -> randomise the order of the players and then split into two teams....using Knuth shuffle function
+//logic for Putting the list of names into 2 teams randomly - on every click -> randomise the order of the players and then split into two teams....using Knuth shuffle function
     function shuffle(players) {
         let currentIndex = players.length, temporaryValue, randomIndex;
         // While there are remaining elements to shuffle...
@@ -68,6 +68,5 @@ render() {
     );
   }
 }
-
 
 export default Teams;
