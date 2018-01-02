@@ -2,7 +2,6 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 
 //This component controls the list of players to be displayed
-
 const Players = ({players, player}) => (
 			<div>
 				{ players.count() ?

@@ -36,7 +36,6 @@ class Form extends Component {
 
   render() {
 		const { fields, className } = this.props;
-
     return (
 			<form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
 				{ this.state.fields.map(({ name, value, className }, i) => (
@@ -48,8 +47,6 @@ class Form extends Component {
 					className={ className }
 					/>
 				))}
-
-			{/* <input className="btn btn-success" type="submit" value="+" /> */}
 
 			<AddButton className="btn btn-success" type="submit" value="+" />
 

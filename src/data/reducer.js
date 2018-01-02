@@ -38,7 +38,7 @@ const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_PLAYER": return addPlayer(state, action);
         // case "SET_PLAYERS": return setPlayers(state, action);
-        // case "SET_PLAYER": return setPlayer(state, action);
+        case "SET_PLAYER": return setPlayer(state, action);
         // case "DELETE_PLAYER": return deletePlayer(state, action);
         // case "generateTeams": return
         default: return state;
