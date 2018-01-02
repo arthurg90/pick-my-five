@@ -8,7 +8,7 @@ export const addPlayer = ({player, id}) => {
 	};
 };
 
-export const deletePlayer = (id) => {
+export const deletePlayer = id => {
 	return {
 		type: "DELETE_PLAYER",
 		id: id,

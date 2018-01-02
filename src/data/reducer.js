@@ -27,20 +27,24 @@ const setPlayer = (state, { player }) => state.update("players", players => {
 	return players.map(p => p.get("id") === player.get("id") ? player : p)
 });
 
+// const deletePlayer = (state, { id }) => {
+// 	return state.update("players", players => {
+// 		return players.filter(( p ) => p.get("id") !== +id)
+// 	});
+// }
+
 const deletePlayer = (state, { id }) => {
 	return state.update("players", players => {
-		return players.filter(( p ) => p.get("id") !== +id)
-	});
+    return players.filter(( p ) => p.get("id") !== +id)
+  });
 }
-
 
 const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_PLAYER": return addPlayer(state, action);
         // case "SET_PLAYERS": return setPlayers(state, action);
-        case "SET_PLAYER": return setPlayer(state, action);
-        // case "DELETE_PLAYER": return deletePlayer(state, action);
-        // case "generateTeams": return
+        // case "SET_PLAYER": return setPlayer(state, action);
+        case "DELETE_PLAYER": return deletePlayer(state, action);
         default: return state;
     }
 };
