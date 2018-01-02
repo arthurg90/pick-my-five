@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Input from "./Input";
+import AddButton from "../../containers/AddButton"
 
 class Form extends Component {
 	constructor(props) {
@@ -23,7 +24,6 @@ class Form extends Component {
 			return data;
 		}, {});
 
-		// console.log(fields);
 		this.props.onSubmit(data);
 }
 
@@ -37,8 +37,6 @@ class Form extends Component {
   render() {
 		const { fields, className } = this.props;
 
-		// const isEnabled = fields.value == "";
-
     return (
 			<form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
 				{ this.state.fields.map(({ name, value, className }, i) => (
@@ -51,7 +49,9 @@ class Form extends Component {
 					/>
 				))}
 
-			<input className="btn btn-success" type="submit" value="+" />
+			{/* <input className="btn btn-success" type="submit" value="+" /> */}
+
+			<AddButton className="btn btn-success" type="submit" value="+" />
 
       </form>
     )

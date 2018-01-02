@@ -5,7 +5,7 @@ import React, { Component } from "react";
 
 const Players = ({players, player}) => (
 			<div>
-				{players.count() ?
+				{ players.count() ?
 					<ul className="list-group">
 						{ players.map(player => (
 								<li className="list-group-item" key={ player.get("id") }>
