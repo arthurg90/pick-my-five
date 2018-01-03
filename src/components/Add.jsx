@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "./Form/Form";
-
+//this component renders Form components for Input and Button
 const fields = [
 	{ name: "player", value:"", className:"form-control" }
 ];
@@ -8,11 +8,7 @@ const fields = [
 const Add = ({ onSubmit }) => (
 	<div>
 		<Form onSubmit={ onSubmit } className="panel-body" fields={ fields } />
-
-		<h3>Player Roster:</h3>
-
 	</div>
-
 );
 
 export default Add;

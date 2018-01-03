@@ -6,6 +6,8 @@ import Player from "../containers/Player"
 
 const Players = ({players, player, onDelete}) => (
 			<div>
+				<h3>Player Roster:</h3>
+
 				{ players.count() ?
 					<ul className="list-group">
 						{ players.map(player => (

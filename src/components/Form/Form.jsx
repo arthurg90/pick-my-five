@@ -5,11 +5,10 @@ import AddButton from "../../containers/AddButton"
 class Form extends Component {
 	constructor(props) {
 		super(props);
-
 		this.submit = this.submit.bind(this);
-
 		this.state = {
 		fields: props.fields.slice(),
+		// fieldValue: props.fields.value,
 	};
 };
 
@@ -18,13 +17,16 @@ class Form extends Component {
 	submit(e) {
 		e.preventDefault(); //prevents default reloading behaviour
 		const fields = this.state.fields;
+		// const fieldValue= this.state.fields.value;
 
 		let data = fields.reduce((data, {name, value}) => {
 			data[name] = value;
 			return data;
 		}, {});
-
 		this.props.onSubmit(data);
+
+		// console.log(fieldValue);
+		// this.setState({fieldValue: ""}); //TODO clear input field once submit is fired
 }
 
 //below handles the event of typing into the input box so there's visual feedback
