@@ -5,6 +5,7 @@ import TeamA from "../components/Teams/TeamA";
 const mapStateToProps = (state, { players }) => {
   return {
       players: state.get("players"),
+      teamA: state.get("teamA")
   };
 };
 

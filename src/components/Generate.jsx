@@ -1,18 +1,14 @@
 import React from "react";
-import Teams from "./Teams/Teams";
-
-// const fields = [
-// 	{ name: "player", value:"", className:"form-control" }
-// ];
-
-const Generate = ({ players, onSubmit }) => (
+// import Teams from "./Teams/Teams";
+import GenerateButton from "../containers/GenerateButton"
+const Generate = ({ players, value, type, className, onClick }) => (
 	<div>
-		<Teams onSubmit={ onSubmit } className="panel-body" />
-
-
-
+		<GenerateButton className="btn btn-warning" type="submit" value="Generate Teams" onClick={ onClick }/>
 	</div>
 
 );
 
 export default Generate;
+
+
+/* <Teams onSubmit={ onSubmit } className="panel-body" /> */

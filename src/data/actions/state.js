@@ -15,6 +15,14 @@ export const deletePlayer = id => {
 	};
 };
 
+export const generateTeams = teams => {
+	return {
+		type: "GENERATE_TEAMS",
+		teams:teams,
+	};
+};
+
+
 //TODO : delete?
 // export const setPlayer = player => {
 // 	return {

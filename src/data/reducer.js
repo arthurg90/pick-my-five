@@ -16,17 +16,21 @@ const addPlayer = (state, data) => state.update("players", players => (
 		players.push(Map(createPlayer(data))
 	)));
 
-
 const deletePlayer = (state, { id }) => {
 	return state.update("players", players => {
     return players.filter(( p ) => p.get("id") !== +id)
   });
 }
 
+const generateTeams = (state, data, players) => state.update("teamA", teamA => (
+  teamA.push(Map(players())
+)));
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_PLAYER": return addPlayer(state, action);
         case "DELETE_PLAYER": return deletePlayer(state, action);
+        case "GENERATE_TEAMS": return generateTeams(state, action);
         default: return state;
     }
 };

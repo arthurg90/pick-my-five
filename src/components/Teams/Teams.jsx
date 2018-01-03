@@ -1,67 +1,66 @@
-import React, { Component } from "react";
-import GenerateButton from "../../containers/GenerateButton";
-
-//This is a presentational component like the form section, the App.jsx should have TeamA, TeamB and GenerateButton components
-class Teams extends Component {
-  constructor(props) {
-		super(props);
-		// this.state = {
-    // //   isGenerated: false,     //State for whether teams have been randomly shuffled
-    //   playersList: props.playas.slice(), //state for copying the list of players props from Generate
-    // }
-  this.submit = this.submit.bind(this);
-};
-
-  submit(e) {
-    e.preventDefault();
-    // const playersCopy = this.state.playersList;
-    // function shuffle(players) {
-    //     let currentIndex = playersCopy.length, temporaryValue, randomIndex;
-    //     // While there are remaining elements to shuffle...
-    //     while (0 !== currentIndex) {
-    //     // Pick a remaining element...
-    //     randomIndex = Math.floor(Math.random() * currentIndex);
-    //     currentIndex -= 1;
-    //     // And swap it with the current element.
-    //     temporaryValue = playersCopy[currentIndex];
-    //     playersCopy[currentIndex] = playersCopy[randomIndex];
-    //     playersCopy[randomIndex] = temporaryValue;
-    //   }
-    //
-    //   return playersCopy;
-    // };
-    //
-    // let result = shuffle(playersCopy);
-    // this.setState({playersList: result});
-
-  };
-
-  render() {
-    const { playas, className } = this.props;
-  //   const team1 = this.state.playersList.slice(0,5);   //takes the first half of the players
-  //   const team2 = this.state.playersist.slice(5);    //takes the second half of the players
-  //
-  //   const teamOne = team1.map((value, index) =>
-  //     <li key={index}>
-  //       {value}
-  //     </li>
-  // );
-  //   const teamTwo = team2.map((value, index) =>
-  //     <li key={index}>
-  //       {value}
-  //     </li>
-  // );
-      return (
-        <form onSubmit={ this.submit } >
-
-          <GenerateButton className="btn btn-warning" type="submit" value="Generate Teams" />
-
-        </form>
-      );
-    }
-  }
-
-export default Teams;
+//TODO delete?
+// import React, { Component } from "react";
+// import GenerateButton from "../../containers/GenerateButton";
+//
+// //This is a presentational component like the form section, the App.jsx should have TeamA, TeamB and GenerateButton components
+// class Teams extends Component {
+//   constructor(props) {
+// 		super(props);
+// 		// this.state = {
+//     // //   isGenerated: false,     //State for whether teams have been randomly shuffled
+//     //   playersList: props.players.slice(), //state for copying the list of players props from Generate
+//     // }
+//   this.submit = this.submit.bind(this);
+// };
+//
+//   submit(e) {
+//     e.preventDefault();
+//     // const playersCopy = this.state.playersList;
+//     // function shuffle(players) {
+//     //     let currentIndex = playersCopy.length, temporaryValue, randomIndex;
+//     //     // While there are remaining elements to shuffle...
+//     //     while (0 !== currentIndex) {
+//     //     // Pick a remaining element...
+//     //     randomIndex = Math.floor(Math.random() * currentIndex);
+//     //     currentIndex -= 1;
+//     //     // And swap it with the current element.
+//     //     temporaryValue = playersCopy[currentIndex];
+//     //     playersCopy[currentIndex] = playersCopy[randomIndex];
+//     //     playersCopy[randomIndex] = temporaryValue;
+//     //   }
+//     //
+//     //   return playersCopy;
+//     // };
+//     //
+//     // let result = shuffle(playersCopy);
+//     // this.setState({playersList: result});
+//
+//   };
+//
+//   render() {
+//     const { players, className } = this.props;
+//   //   const team1 = this.state.playersList.slice(0,5);   //takes the first half of the players
+//   //   const team2 = this.state.playersist.slice(5);    //takes the second half of the players
+//   //
+//   //   const teamOne = team1.map((value, index) =>
+//   //     <li key={index}>
+//   //       {value}
+//   //     </li>
+//   // );
+//   //   const teamTwo = team2.map((value, index) =>
+//   //     <li key={index}>
+//   //       {value}
+//   //     </li>
+//   // );
+//       return (
+//         <form onSubmit={ this.submit } >
+//           <GenerateButton className="btn btn-warning" type="submit" value="Generate Teams" />
+//         </form>
+//       );
+//     }
+//   }
+//
+// export default Teams;
 
 
 /*REACT MODEL:
