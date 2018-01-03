@@ -12,7 +12,7 @@ import { generateTeams } from "../data/actions/state";
 const mapDispatchToProps = dispatch => {
     return {
         // onClick is a function which dispatches an action "generateTeams"
-        onClick: data => dispatch(generateTeams(data)),
+        onClick: () => dispatch(generateTeams()),
     };
 };
 

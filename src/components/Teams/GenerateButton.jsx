@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-const GenerateButton = ({players, value, type, className }) => (
+const GenerateButton = ({players, value, type, className, onClick }) => (
   <div>
-    <input className={ className } type={ type } value= { value } />
+    <input className={ className } type={ type } value= { value } onClick={ onClick } />
   </div>
 );
 
