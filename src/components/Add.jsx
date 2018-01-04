@@ -1,6 +1,8 @@
 import React from "react";
 import Form from "./Form/Form";
 //this component renders Form components for Input and Button
+
+//fields the form takes
 const fields = [
 	{ name: "player", value:"", className:"form-control" }
 ];

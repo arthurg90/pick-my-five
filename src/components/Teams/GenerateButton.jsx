@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const GenerateButton = ({players, value, type, className, onClick }) => (
   <div>
@@ -7,6 +7,3 @@ const GenerateButton = ({players, value, type, className, onClick }) => (
 );
 
 export default GenerateButton;
-
-
-{/* <input className={ className } type={ type } value= { value } disabled={ players.count() < 10 } /> */}

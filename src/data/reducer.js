@@ -21,52 +21,11 @@ const deletePlayer = (state, { id }) => {
   });
 }
 
-const fetchPlayers = (state, { players }) => state.get("players", players);
-
-
-/*s
-In order to generate Teams, there need to be some additional functions carried out to make changes to the State
-1. get the "players" list from state, if there are 10 players in the array
-2. apply randomisation logic to it so that the players are shuffled and assign the array to a new variable
-3. push this new array into the "teams" state - the function needs to return the new teams array
-4. teamA will take the first 5 players from this updated teams array
-5. teamB will take the last 5 players from the updated teams array
-
-
-
-Logic for shuffling players:
-const shufflePlayers = ({players}) = {
-let currentIndex = players.length,
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = players[currentIndex];
-    players[currentIndex] = players[randomIndex];
-    players[randomIndex] = temporaryValue;
-    }
-    return players;
-  };
-
-  let result = shuffle(playersCopy);
-  return state.update({teams: result});
-};
-
-*/
-
-
-// const generateTeams = (state, {players}) => {
-//   // const playersShuffled = shufflePlayers(players);
-//   return state.update("teams", teams => {
-//     return teams.push(null)
-//   });
-// }
-
 
 const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_PLAYER": return addPlayer(state, action);
         case "DELETE_PLAYER": return deletePlayer(state, action);
-        // case "GENERATE_TEAMS": return generateTeams(state, action);
         default: return state;
     }
 };

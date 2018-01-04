@@ -6,31 +6,44 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.submit = this.submit.bind(this);
+		this.click = this.click.bind(this);
+
 		this.state = {
 		fields: props.fields.slice(),
+		}
+
 	};
-};
+
+//below handles reset button event to reset form:
+
+click(e) {
+	window.location.reload();
+}
 
 //below handles the event behaviour for submitting items into the list
 
-	submit(e) {
-		e.preventDefault(); //prevents default reloading behaviour
-		const fields = this.state.fields;
+submit(e) {
+	e.preventDefault(); //prevents default reloading behaviour
+	let fields = this.state.fields.slice();
+	let data = fields.reduce((data, {name, value}) => {
+		data[name] = value;
+		return data;
+	}, {});
 
-		let data = fields.reduce((data, {name, value}) => {
-			data[name] = value;
-			return data;
-		}, {});
-		this.props.onSubmit(data);
+	const blankFields = [
+		{ name: "player", value:"", className:"form-control" }
+	];
 
-		// console.log(fieldValue);
-		// this.setState({fieldValue: ""}); //TODO clear input field once submit is fired
+	this.setState({fields: blankFields});
+
+	this.props.onSubmit(data);
 }
 
 //below handles the event of typing into the input box so there's visual feedback
 	change(e, i) {
 		let fields = this.state.fields.slice();
 		fields[i].value = e.target.value;
+		console.log(fields[i].value);
 		this.setState({fields: fields});
 	}
 
@@ -38,7 +51,7 @@ class Form extends Component {
 //TODO validate the input value so the button is disabled when the input is blank AND when there are 10 or more items
 
   render() {
-		const { fields, className } = this.props;
+		const { fields, className, inputCheck } = this.props;
     return (
 			<form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
 				{ this.state.fields.map(({ name, value, className }, i) => (
@@ -50,6 +63,10 @@ class Form extends Component {
 					className={ className }
 					/>
 				))}
+
+			<button onClick={ this.click } className="btn btn-info" type="button">Reset</button>
+
+			<button className="btn btn-warning" type="button" disabled={ !inputCheck }>Disabled If no input value</button>
 
 			<AddButton className="btn btn-success" type="submit" value="+" />
 
