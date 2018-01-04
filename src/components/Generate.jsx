@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import GenerateButton from "../containers/GenerateButton"
-// import Teams from "./Teams/Teams";
-
-//TODO make shuffle players work!
 
 class Generate extends Component {
 	constructor(props) {
@@ -12,26 +9,33 @@ class Generate extends Component {
 		};
 
 		this.click = this.click.bind(this);
-};
-
+	};
+//Handling the click event which randomly assigns teams names into teamA and teamB
 	click(e) {
 		e.preventDefault();
-		const copyPlayers = this.props.players.slice();  //make a copy of players from State
-		// console.log(copyPlayers);
+		// const copyPlayers = this.props.players.slice();  //make a copy of players from State
+		const copyPlayers = [...this.props.players];
+		console.log(copyPlayers);
 
-		//Generic Function for shuffling an array
-		function shuffleArray(array) {
-			let i = array.length - 1;
-			for (; i > 0; i--) {
-				const j = Math.floor(Math.random() * (i + 1));
-				const temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-			}
-			return array;
-		}
 
-		let playersShuffled = shuffleArray(copyPlayers);
+//Generic Function for shuffling an array (Fisher-Yates Shuffle)
+function shuffle(players) {
+		let currentIndex = players.length, temporaryValue, randomIndex;
+		// While there are remaining elements to shuffle...
+		while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+		// And swap it with the current element.
+		temporaryValue = players[currentIndex];
+		players[currentIndex] = players[randomIndex];
+		players[randomIndex] = temporaryValue;
+	}
+
+		return players;
+};
+
+		let playersShuffled = shuffle(copyPlayers);
 		// this.state.shuffled.push(playersShuffled);
 		this.setState({shuffled: playersShuffled}, function () { //pass a callback to setState so that function fires on first "click"
     console.log(this.state.shuffled);
@@ -40,15 +44,10 @@ class Generate extends Component {
 
 	render() {
 		const { players } = this.props;
-		// console.log(this.props.players);
-
 		//Displaying the first half and second half of the players array as two teams:
 		//TODO shuffle the players and save in state
 		const team1 = this.state.shuffled.slice(0,5);
 	  const team2 = this.state.shuffled.slice(5);
-
-		// const team2 = this.state.shuffled.slice(5);
-
 
 		const teamA = team1.map(player =>
 	    <li key={ player.get("id")}>
@@ -214,19 +213,3 @@ v2 */
 	render(<Items />, document.getElementById('app'));
 
 	*/
-
-
-
-// OLD v1:
-// import GenerateButton from "../containers/GenerateButton"
-// const Generate = ({ players, value, type, className, onClick }) => (
-// 	<div>
-// 		<GenerateButton className="btn btn-warning" type="submit" value="Generate Teams" onClick={ onClick }/>
-// 	</div>
-//
-// );
-//
-// export default Generate;
-
-
-/* <Teams onSubmit={ onSubmit } className="panel-body" /> */
