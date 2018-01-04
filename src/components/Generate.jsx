@@ -3,35 +3,52 @@ import GenerateButton from "../containers/GenerateButton"
 // import Teams from "./Teams/Teams";
 
 //TODO make shuffle players work!
-function shuffleArray(array) {
-	let i = array.length - 1;
-	for (; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		const temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-	return array;
-}
 
 class Generate extends Component {
-	componentDidMount() {
-		this.props.onLoad();
-	}
+	constructor(props) {
+		super(props);
+		this.state = {
+			shuffled: []
+		};
 
-// 	click(e) {
-// 		e.preventDefault();
-// }
+		this.click = this.click.bind(this);
+};
+
+	click(e) {
+		e.preventDefault();
+		const copyPlayers = this.props.players.slice();  //make a copy of players from State
+		// console.log(copyPlayers);
+
+		//Generic Function for shuffling an array
+		function shuffleArray(array) {
+			let i = array.length - 1;
+			for (; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				const temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+			return array;
+		}
+
+		let playersShuffled = shuffleArray(copyPlayers);
+		// this.state.shuffled.push(playersShuffled);
+		this.setState({shuffled: playersShuffled}, function () { //pass a callback to setState so that function fires on first "click"
+    console.log(this.state.shuffled);
+	});
+}
+
 	render() {
 		const { players } = this.props;
-
-		console.log(this.props.players);
-
-    const playersShuffled = shuffleArray(this.props.players);
+		// console.log(this.props.players);
 
 		//Displaying the first half and second half of the players array as two teams:
-		const team1 = playersShuffled.slice(0,5);
-	  const team2 = playersShuffled.slice(5);
+		//TODO shuffle the players and save in state
+		const team1 = this.state.shuffled.slice(0,5);
+	  const team2 = this.state.shuffled.slice(5);
+
+		// const team2 = this.state.shuffled.slice(5);
+
 
 		const teamA = team1.map(player =>
 	    <li key={ player.get("id")}>
@@ -46,25 +63,41 @@ class Generate extends Component {
 	);
 
 		return (
-			<div>
+			<div className="container">
 				<GenerateButton className="btn btn-warning" type="submit" value="Generate Teams" onClick={ this.click }/>
-
             { /* check there are players to show */ }
             { players.count() == 10 ?
-                <ul className="list-group">
-										<h3> Team A: </h3>
-                    <li>{teamA}</li>
-										<h3> TeamB </h3>
-										<li>{teamB}</li>
-                </ul>
-                :
-                <p>No players found</p>
+							<div>
+								<h3> Team A: </h3>
+								<ul className="list-group">
+									<li>{teamA}</li>
+								</ul>
+
+								<h3> TeamB </h3>
+								<ul className="list-group">
+									<li>{teamB}</li>
+								</ul>
+							</div>
+              :
+              <p>Less than 10 players have been entered</p>
             }
-            </div>
+      </div>
 		)
 	}
 }
 export default Generate;
+
+// { /* check there are players to show */ }
+// { players.count() == 10 ?
+// 		<ul className="list-group">
+// 				<h3> Team A: </h3>
+// 				<li>{teamA}</li>
+// 				<h3> TeamB </h3>
+// 				<li>{teamB}</li>
+// 		</ul>
+// 		:
+// 		<p>No players found</p>
+// }
 
 
 
