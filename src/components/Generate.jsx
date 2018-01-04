@@ -2,36 +2,36 @@ import React, { Component } from "react";
 import GenerateButton from "../containers/GenerateButton"
 // import Teams from "./Teams/Teams";
 
+//TODO make shuffle players work!
+function shuffleArray(array) {
+	let i = array.length - 1;
+	for (; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		const temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+	return array;
+}
+
 class Generate extends Component {
 	componentDidMount() {
 		this.props.onLoad();
 	}
 
+// 	click(e) {
+// 		e.preventDefault();
+// }
 	render() {
-		const {players} = this.props;
+		const { players } = this.props;
 
-		const shufflePlayers = (players) => {
-			let currentIndex = players.length, temporaryValue, randomIndex;
-	    // While there are remaining elements to shuffle...
-	    while (0 !== currentIndex) {
-	      // Pick a remaining element...
-	      randomIndex = Math.floor(Math.random() * currentIndex);
-	      currentIndex -= 1;
-	      // And swap it with the current element.
-	      temporaryValue = players[currentIndex];
-	      players[currentIndex] = players[randomIndex];
-	      players[randomIndex] = temporaryValue;
-	  	}
-		        return players;
-		};
+		console.log(this.props.players);
 
-
-    let playersShuffled = shufflePlayers(players);
+    const playersShuffled = shuffleArray(this.props.players);
 
 		//Displaying the first half and second half of the players array as two teams:
 		const team1 = playersShuffled.slice(0,5);
 	  const team2 = playersShuffled.slice(5);
-
 
 		const teamA = team1.map(player =>
 	    <li key={ player.get("id")}>
@@ -44,7 +44,6 @@ class Generate extends Component {
 	      {player.get("player")}
 	    </li>
 	);
-
 
 		return (
 			<div>
