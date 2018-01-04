@@ -20,9 +20,9 @@ const App = () => (
 
     <Generate />
 
-    <TeamA />
+    {/* <TeamA />
 
-    <TeamB />
+    <TeamB /> */}
 
     <Footer notice="Pick My Five designed by Arthur Graham © " date={((new Date().getFullYear()))} />
 

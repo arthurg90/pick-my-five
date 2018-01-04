@@ -21,19 +21,7 @@ const deletePlayer = (state, { id }) => {
   });
 }
 
-const shufflePlayers = (state, {players}) => {
-  let currentIndex = players.length;
-
-  while (0 !== currentIndex) {
-    let random = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    let temporaryValue = players[random];
-    players[random] = temporaryValue;
-  }
-  return players;
-};
-
-
+const fetchPlayers = (state, { players }) => state.get("players", players);
 
 
 /*s
@@ -66,19 +54,19 @@ let currentIndex = players.length,
 */
 
 
-const generateTeams = (state, {players}) => {
-  const playersShuffled = shufflePlayers(players);
-  return state.update("teams", teams => {
-    return teams.push(playersShuffled)
-  });
-}
+// const generateTeams = (state, {players}) => {
+//   // const playersShuffled = shufflePlayers(players);
+//   return state.update("teams", teams => {
+//     return teams.push(null)
+//   });
+// }
 
 
 const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_PLAYER": return addPlayer(state, action);
         case "DELETE_PLAYER": return deletePlayer(state, action);
-        case "GENERATE_TEAMS": return generateTeams(state, action);
+        // case "GENERATE_TEAMS": return generateTeams(state, action);
         default: return state;
     }
 };

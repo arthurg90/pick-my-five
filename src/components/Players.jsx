@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Player from "../containers/Player"
-// import { Link } from "react-router-dom";
 
 //This component controls the list of players to be displayed
 

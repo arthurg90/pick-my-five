@@ -8,7 +8,6 @@ class Form extends Component {
 		this.submit = this.submit.bind(this);
 		this.state = {
 		fields: props.fields.slice(),
-		// fieldValue: props.fields.value,
 	};
 };
 
@@ -17,7 +16,6 @@ class Form extends Component {
 	submit(e) {
 		e.preventDefault(); //prevents default reloading behaviour
 		const fields = this.state.fields;
-		// const fieldValue= this.state.fields.value;
 
 		let data = fields.reduce((data, {name, value}) => {
 			data[name] = value;
