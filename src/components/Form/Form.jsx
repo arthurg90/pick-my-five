@@ -34,8 +34,7 @@ submit(e) {
 		{ name: "player", value:"", className:"form-control" }
 	];
 
-	this.setState({fields: blankFields});
-
+	this.setState({fields: blankFields}); //on Submit clear the input field
 	this.props.onSubmit(data);
 }
 
@@ -51,7 +50,7 @@ submit(e) {
 //TODO validate the input value so the button is disabled when the input is blank AND when there are 10 or more items
 
   render() {
-		const { fields, className, inputCheck } = this.props;
+		const { fields, className } = this.props;
     return (
 			<form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
 				{ this.state.fields.map(({ name, value, className }, i) => (
@@ -66,9 +65,7 @@ submit(e) {
 
 			<button onClick={ this.click } className="btn btn-info" type="button">Reset</button>
 
-			<button className="btn btn-warning" type="button" disabled={ !inputCheck }>Disabled If no input value</button>
-
-			<AddButton className="btn btn-success" type="submit" value="+" />
+			<AddButton className="btn btn-success" type="submit" value="+"/>
 
       </form>
     )

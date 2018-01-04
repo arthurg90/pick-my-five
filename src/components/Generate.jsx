@@ -13,7 +13,6 @@ class Generate extends Component {
 //Handling the click event which randomly assigns teams names into teamA and teamB
 	click(e) {
 		e.preventDefault();
-		// const copyPlayers = this.props.players.slice();  //make a copy of players from State
 		const copyPlayers = [...this.props.players];
 
 //Generic Function for shuffling an array (Fisher-Yates Shuffle)
