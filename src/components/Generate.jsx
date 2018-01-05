@@ -61,7 +61,7 @@ function shuffle(players) {
 			<div className="container">
 				<GenerateButton className="btn btn-warning" type="submit" value="Generate Teams" onClick={ this.click }/>
             { /* check there are players to show */ }
-            { players.count() == 10 ?
+            { players.count() === 10 ?
 							<div>
 								<h3> Team A: </h3>
 								{teamA}

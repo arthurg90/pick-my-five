@@ -1,4 +1,4 @@
-import { Map, List } from "immutable";
+import { Map } from "immutable";
 
 let lastID = 0; //initiate the count for id to be assigned to players
 // create a function that returns a new player Map

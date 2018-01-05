@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Player from "../containers/Player"
 
 //This component controls the list of players to be displayed

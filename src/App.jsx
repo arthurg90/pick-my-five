@@ -1,9 +1,5 @@
 import React from "react";
-import "./App.min.css"
-import {
-    Route,
-    Switch,
-} from "react-router-dom";
+import "./App.min.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Players from "./containers/Players";

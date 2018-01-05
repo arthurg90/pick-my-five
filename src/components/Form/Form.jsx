@@ -50,7 +50,7 @@ submit(e) {
 //TODO validate the input value so the button is disabled when the input is blank AND when there are 10 or more items
 
   render() {
-		const { fields, className } = this.props;
+		const { className } = this.props;
     return (
 			<form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
 				{ this.state.fields.map(({ name, value, className }, i) => (

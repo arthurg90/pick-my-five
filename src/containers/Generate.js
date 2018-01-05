@@ -1,7 +1,5 @@
 import { connect } from "react-redux";
 import Generate from "../components/Generate";
-import { fetchPlayers } from "../data/actions/state";
-
 
 const mapStateToProps = state => {
     return {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const AddButton = ({ className, type, value, disabled, players}) => (
   <div className="form-group">
