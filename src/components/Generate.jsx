@@ -35,7 +35,7 @@ function shuffle(players) {
 		let playersShuffled = shuffle(copyPlayers);
 		// this.state.shuffled.push(playersShuffled);
 		this.setState({shuffled: playersShuffled}, function () { //pass a callback to setState so that function fires on first "click"
-    console.log(this.state.shuffled);
+    // console.log(this.state.shuffled);
 	});
 }
 

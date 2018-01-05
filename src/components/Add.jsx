@@ -9,6 +9,7 @@ const fields = [
 
 const Add = ({ onSubmit }) => (
 	<div>
+		<h3>Start by adding some player names:</h3>
 		<Form onSubmit={ onSubmit } className="panel-body" fields={ fields } />
 	</div>
 );

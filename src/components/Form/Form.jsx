@@ -42,7 +42,7 @@ submit(e) {
 	change(e, i) {
 		let fields = this.state.fields.slice();
 		fields[i].value = e.target.value;
-		console.log(fields[i].value);
+		// console.log(fields[i].value);
 		this.setState({fields: fields});
 	}
 
@@ -53,20 +53,19 @@ submit(e) {
 		const { className } = this.props;
     return (
 			<form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
-				{ this.state.fields.map(({ name, value, className }, i) => (
-					<Input
-					onChange={ (e) => this.change(e, i) }
-					value={ value }
-					key={ i }
-					name={ name }
-					className={ className }
-					/>
-				))}
-
-			<button onClick={ this.click } className="btn btn-info" type="button">Reset</button>
-
-			<AddButton className="btn btn-success" type="submit" value="+"/>
-
+				<div className="inputAndButtons">
+					{ this.state.fields.map(({ name, value, className }, i) => (
+						<Input
+						onChange={ (e) => this.change(e, i) }
+						value={ value }
+						key={ i }
+						name={ name }
+						className={ className }
+						/>
+					))}
+					<AddButton className="btn-add" type="submit" value="+"/>
+				</div>
+				<button onClick={ this.click } className="btn-reset" type="button">Reset</button>
       </form>
     )
   }

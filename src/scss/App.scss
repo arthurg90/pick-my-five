@@ -19,8 +19,9 @@ mainfont: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 darkPurple: '#38003C',
 white: '#fff',
 midGrey: '#999',
+darkGrey: '#4f4f4f',
 midPurple: '#641B6A',
-offWhite: '#f4f2f4'
+offWhite: '#FAFAFA'
 
 */
 
@@ -30,7 +31,7 @@ offWhite: '#f4f2f4'
 html,
 body {
  color: #fff;
- background-color: #fff;
+ background-color: #FAFAFA;
  text-align: center;
  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -38,7 +39,11 @@ body {
 
 .container {
   padding: 0;
+  background-color: #fff;
 }
+
+/* Header elements
+*/
 
 .page-header {
   background-image: url("./img/header-pick5.png");
@@ -51,10 +56,86 @@ body {
   border-bottom: 4px solid #999;
 }
 
+.logo {
+  height: 3em;
+  display: block;
+}
+
+h1 {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+h3 {
+  color: #4f4f4f;
+}
+
+small {
+  display: block;
+  font-style: normal;
+  margin-top: 0.5em;
+  color: #dcb14b !important;
+  font-size: .5em !important;
+}
+
+/* Add player form elements
+*/
+
+//container for input and button elements:
+.inputAndButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.form-control {
+  width: 100%;
+  margin-right: 15em;
+}
+
+.btn-add {
+  background-color: #641B6A;
+  border: none;
+  color: white;
+  padding: 0.5em 1em;
+  margin: 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25%;
+  margin-left: 1em;
+
+}
+
+.btn:disabled,
+.btn-add:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.btn-reset {
+  background-color: #fff;
+  border: 2px solid #641B6A;
+  color: #641B6A;
+  padding: 0.5em 1em;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 15%;
+}
+
+
+/* Footer elements
+*/
+
 .container-footer {
   background-color: #38003C;
-  color: #f4f2f4;
+  color: #FAFAFA;
   padding: 1.5em;
   margin-top: 2.5em;
-  font-size: 0.5em;
+  font-size: 0.75em;
 }
