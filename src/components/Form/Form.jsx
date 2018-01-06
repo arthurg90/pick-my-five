@@ -27,7 +27,6 @@ submit(e) {
 	let fields = this.state.fields.slice();
 	let data = fields.reduce((data, {name, value}) => {
 		data[name] = value;
-		console.log(data);// figure out how to access data
 		return data;
 	}, {});
 
@@ -48,7 +47,6 @@ submit(e) {
 	}
 
 //the props below are passed down to the AddButton and Input component, the Add component passes fields props to the form and is destructured
-//TODO validate the input value so the button is disabled when the input is blank AND when there are 10 or more items
 
   render() {
 		const { className } = this.props;
