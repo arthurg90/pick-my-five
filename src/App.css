@@ -148,7 +148,8 @@ small {
 
 .balls-container {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-top: 1em; }
 
 .balls-icon {
   height: 2em; }
