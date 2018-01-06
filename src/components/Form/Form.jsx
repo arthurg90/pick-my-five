@@ -27,6 +27,7 @@ submit(e) {
 	let fields = this.state.fields.slice();
 	let data = fields.reduce((data, {name, value}) => {
 		data[name] = value;
+		console.log(data);// figure out how to access data
 		return data;
 	}, {});
 

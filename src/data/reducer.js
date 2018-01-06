@@ -11,9 +11,9 @@ const createPlayer = ({ player, id }) => {
     });
 };
 
-const addPlayer = (state, data) => state.update("players", players => (
+const addPlayer = (state, data) => data.player !== '' ? state.update("players", players => (
 		players.push(Map(createPlayer(data))
-	)));
+	))) : state ;
 
 const deletePlayer = (state, { id }) => {
 	return state.update("players", players => {
@@ -31,20 +31,3 @@ const reducer = (state, action) => {
 };
 
 export default reducer;
-
-//TODO delete?
-
-
-// case "SET_PLAYERS": return setPlayers(state, action);
-// case "SET_PLAYER": return setPlayer(state, action);
-
-// const setPlayers = (state, { players }) => state.get("players", players);
-
-// const setPlayer = (state, { player }) => state.update("players", players => {
-// 	let exists = players.find(( p ) => p.get("id") === player.get("id"));
-// 	if (!exists) {
-// 		return players.push(player);
-// 	}
-//
-// 	return players.map(( p ) => p.get("id") === player.get("id") ? player : p)
-// });

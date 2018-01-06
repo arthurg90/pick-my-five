@@ -29,7 +29,6 @@ body {
   color: #fff;
   background-color: #FAFAFA;
   text-align: center;
-  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; }
 
 .container {
@@ -45,8 +44,8 @@ body {
   height: 100%;
   background-size: cover;
   margin: 0 !important;
-  padding: 1.5em;
-  border-bottom: 4px solid #999; }
+  padding: 1em;
+  border-bottom: 1em solid #641b6a; }
 
 .logo {
   height: 3em;
@@ -65,7 +64,7 @@ small {
   display: block;
   font-style: normal;
   margin-top: 0.5em;
-  color: #dcb14b !important;
+  color: #999 !important;
   font-size: .5em !important; }
 
 /* Add player form elements
