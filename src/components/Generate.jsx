@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import GenerateButton from "../containers/GenerateButton"
-
+//set up local state for a "shuffled" player array
 class Generate extends Component {
 	constructor(props) {
 		super(props);
@@ -12,6 +12,7 @@ class Generate extends Component {
 		this.clicked = this.clicked.bind(this);
 
 	};
+
 //Handling the click event which randomly assigns teams names into teamA and teamB
 	click(e) {
 		e.preventDefault();
@@ -44,8 +45,6 @@ function shuffle(players) {
 clicked(e) {
 	window.location.reload();
 }
-
-
 	render() {
 		const { players } = this.props;
 		//Displaying the first half and second half of the players array as two teams:

@@ -10,6 +10,7 @@ mainfont: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 */
 
 /* Colours
+
 darkPurple: '#38003C',
 white: '#fff',
 lightGrey: '#e0e0e0',
@@ -24,6 +25,7 @@ offWhite: '#FAFAFA'
 /*
  * Base structure
  */
+
 html,
 body {
  color: #fff;
@@ -75,7 +77,7 @@ small {
   display: block;
   font-style: normal;
   margin-top: 0.5em;
-  color: #999 !important;
+  color: #FAFAFA !important;
   font-size: .5em !important;
 }
 
@@ -170,7 +172,7 @@ small {
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5%;
+  border-radius: 4%;
 }
 
 .balls-container {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Input from "./Input";
 import AddButton from "../../containers/AddButton"
-
+//set up local state
 class Form extends Component {
 	constructor(props) {
 		super(props);
@@ -10,11 +10,9 @@ class Form extends Component {
 		fields: props.fields.slice(),
 		}
 	};
-
 //below handles the event behaviour for submitting items into the list
-
 submit(e) {
-	e.preventDefault(); //prevents default reloading behaviour
+	e.preventDefault();
 	let fields = this.state.fields.slice();
 	let data = fields.reduce((data, {name, value}) => {
 		data[name] = value;
@@ -37,7 +35,6 @@ submit(e) {
 	}
 
 //the props below are passed down to the AddButton and Input component, the Add component passes fields props to the form and is destructured
-
   render() {
 		const { className } = this.props;
     return (

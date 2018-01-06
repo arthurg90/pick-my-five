@@ -22,7 +22,6 @@ const deletePlayer = (state, { id }) => {
   });
 }
 
-
 const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_PLAYER": return addPlayer(state, action);

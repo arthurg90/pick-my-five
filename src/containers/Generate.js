@@ -1,11 +1,10 @@
 import { connect } from "react-redux";
 import Generate from "../components/Generate";
-
+//this is the wrapped version of the Generate component to be used in App
 const mapStateToProps = state => {
     return {
         players: state.get("players"),
     };
 };
 
-// Add props are now controlled by this file
-export default connect(mapStateToProps)(Generate); //
+export default connect(mapStateToProps)(Generate);

@@ -9,8 +9,5 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-
-
 // connect up mapDispatchToProps with the Add component
-// Add props are now controlled by this file
-export default connect(null, mapDispatchToProps)(Add); //(Add)
+export default connect(null, mapDispatchToProps)(Add); 

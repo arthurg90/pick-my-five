@@ -1,8 +1,7 @@
 import React from "react";
 import Player from "../containers/Player"
 
-//This component controls the list of players to be displayed
-
+//This component controls the list of players to be displayed on page
 const Players = ({players, player, onDelete}) => (
 			<div className="playerRoster">
 				<h3>Player Roster:</h3>
