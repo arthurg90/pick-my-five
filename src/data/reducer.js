@@ -12,7 +12,7 @@ const createPlayer = ({ player, id }) => {
 };
 
 //if player value is not "" then, add the player to the list
-const addPlayer = (state, data) => data.player !== '' ? state.update("players", players => (
+const addPlayer = (state, data) => data.player !== ' ' ? state.update("players", players => (
 		players.push(Map(createPlayer(data))
 	))) : state ;
 

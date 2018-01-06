@@ -6,19 +6,10 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.submit = this.submit.bind(this);
-		this.click = this.click.bind(this);
-
 		this.state = {
 		fields: props.fields.slice(),
 		}
-
 	};
-
-//below handles reset button event to reset form:
-
-click(e) {
-	window.location.reload();
-}
 
 //below handles the event behaviour for submitting items into the list
 
@@ -64,7 +55,6 @@ submit(e) {
 					))}
 					<AddButton className="btn-add" type="submit" value="+"/>
 				</div>
-				<button onClick={ this.click } className="btn-reset" type="button">Reset</button>
       </form>
     )
   }

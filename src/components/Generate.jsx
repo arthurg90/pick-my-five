@@ -9,6 +9,8 @@ class Generate extends Component {
 		};
 
 		this.click = this.click.bind(this);
+		this.clicked = this.clicked.bind(this);
+
 	};
 //Handling the click event which randomly assigns teams names into teamA and teamB
 	click(e) {
@@ -39,6 +41,13 @@ function shuffle(players) {
 	});
 }
 
+//below handles reset button event to reset form:
+
+clicked(e) {
+	window.location.reload();
+}
+
+
 	render() {
 		const { players } = this.props;
 		//Displaying the first half and second half of the players array as two teams:
@@ -59,6 +68,7 @@ function shuffle(players) {
 
 		return (
 			<div className="container">
+				<button onClick={ this.clicked } className="btn-reset" type="button">Reset</button>
 				<GenerateButton className="btn btn-warning" type="submit" value="Generate Teams" onClick={ this.click }/>
             { /* check there are players to show */ }
             { players.count() === 10 ?
@@ -66,7 +76,7 @@ function shuffle(players) {
 								<h3> Team A: </h3>
 								{teamA}
 
-								<h3> TeamB </h3>
+								<h3> Team B: </h3>
 								{teamB}
 							</div>
               :

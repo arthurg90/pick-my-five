@@ -18,9 +18,11 @@ mainfont: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 /* Colours
 darkPurple: '#38003C',
 white: '#fff',
+lightGrey: '#e0e0e0',
 midGrey: '#999',
 darkGrey: '#4f4f4f',
 midPurple: '#641B6A',
+magenta: '#814586',
 offWhite: '#FAFAFA'
 
 */
@@ -53,7 +55,7 @@ body {
   background-size: cover;
   margin: 0 !important;
   padding: 1em;
-  border-bottom: 1em solid #641b6a;
+  border-bottom: 1em solid #814586;
 }
 
 .logo {
@@ -68,10 +70,13 @@ h1 {
   text-align: left;
 }
 
-h3 {
+h3, li {
   color: #4f4f4f;
 }
 
+h3 {
+  padding-top: 0;
+}
 small {
   display: block;
   font-style: normal;
@@ -91,7 +96,7 @@ small {
 
 .form-control {
   width: 100%;
-  margin-right: 15em;
+  margin-right: 1em;
 }
 
 .btn-add {
@@ -121,20 +126,49 @@ small {
   border: 2px solid #641B6A;
   color: #641B6A;
   padding: 0.5em 1em;
+  margin: 1em;
   text-align: center;
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 15%;
+  border-radius: 20%;
 }
 
+//Player roster list elements:
+.playerRoster h3 {
+  margin-top: 0;
+}
+
+.list-group {
+  width: 50%;
+  margin: auto;
+  padding: 1.5em 0;
+}
+
+.list-group-item {
+  background-color: #e0e0e0;
+  border: 1px solid #641B6A;
+}
+
+.btn-del {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 1em;
+  float: right;
+  color: #4f4f4f;
+}
+
+.btn-del:hover {
+  color: red;
+}
 
 /* Footer elements
 */
 
 .container-footer {
   background-color: #38003C;
-  color: #FAFAFA;
+  color: #FAFAFA !important;
   padding: 1.5em;
   margin-top: 2.5em;
   font-size: 0.75em;
