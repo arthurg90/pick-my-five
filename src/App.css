@@ -1,12 +1,6 @@
 /*
  * Globals
  */
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff; }
-
 /* Fonts
 
 mainfont: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -48,7 +42,7 @@ body {
   background-size: cover;
   margin: 0 !important;
   padding: 1em;
-  border-bottom: 1em solid #814586; }
+  border-bottom: .5em solid #814586; }
 
 .logo {
   height: 3em;
@@ -87,18 +81,18 @@ small {
   background-color: #641B6A;
   border: none;
   color: white;
+  font-size: 3em;
   padding: 0.5em 1em;
   margin: 0;
   text-align: center;
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 25%;
+  border-radius: 15%;
   margin-left: 1em; }
 
-.btn:disabled,
+.btn-generate:disabled,
 .btn-add:disabled {
-  border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666; }
 
@@ -112,7 +106,7 @@ small {
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 20%; }
+  border-radius: 10%; }
 
 .playerRoster h3 {
   margin-top: 0; }
@@ -136,6 +130,51 @@ small {
 
 .btn-del:hover {
   color: red; }
+
+/* Generate teams elements
+*/
+.btn-generate {
+  background-color: #641B6A;
+  border: none;
+  color: #fff;
+  padding: 0.5em 1em;
+  margin: 0 6em;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5%; }
+
+.balls-container {
+  display: flex;
+  justify-content: center; }
+
+.balls-icon {
+  height: 2em; }
+
+.teams-container {
+  display: flex;
+  justify-content: center; }
+
+.teamA li,
+.teamB li {
+  color: #fff !important;
+  font-size: 1.5em;
+  list-style-type: none; }
+
+.teamA h3,
+.teamB h3 {
+  font-weight: bold;
+  padding-bottom: 1.5em; }
+
+.teamA-list,
+.teamB-list {
+  position: relative;
+  bottom: 16em; }
+
+.teamA-shirt,
+.teamB-shirt {
+  width: 80%; }
 
 /* Footer elements
 */

@@ -10,7 +10,7 @@ import Generate from "./containers/Generate"
 const App = () => (
   <div className="container">
 
-    <Header title="Pick My Five" subtitle="Generate five-a-side football teams on the fly" />
+    <Header title="Pick My Five" subtitle="Create five-a-side football teams on the fly" />
 
     <Add />
 

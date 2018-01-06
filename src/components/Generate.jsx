@@ -35,9 +35,7 @@ function shuffle(players) {
 };
 
 		let playersShuffled = shuffle(copyPlayers);
-		// this.state.shuffled.push(playersShuffled);
 		this.setState({shuffled: playersShuffled}, function () { //pass a callback to setState so that function fires on first "click"
-    // console.log(this.state.shuffled);
 	});
 }
 
@@ -54,6 +52,7 @@ clicked(e) {
 		const team1 = this.state.shuffled.slice(0,5);
 	  const team2 = this.state.shuffled.slice(5);
 
+//variables for Displaying a list of players in team A and B columns
 		const teamA = team1.map(player =>
 	    <li key={ player.get("id")}>
 	      {player.get("player")}
@@ -68,16 +67,32 @@ clicked(e) {
 
 		return (
 			<div className="container">
+				<div className="balls-container">
+					<img className='balls-icon' src={require('../img/balls.png')} alt={'black and white football icon'}/>
+					<GenerateButton className="btn-generate" type="submit" value="Generate Teams" onClick={ this.click }/>
+					<img className='balls-icon' src={require('../img/balls.png')} alt={'black and white football icon'}/>
+				</div>
 				<button onClick={ this.clicked } className="btn-reset" type="button">Reset</button>
-				<GenerateButton className="btn btn-warning" type="submit" value="Generate Teams" onClick={ this.click }/>
             { /* check there are players to show */ }
             { players.count() === 10 ?
-							<div>
-								<h3> Team A: </h3>
-								{teamA}
+							<div className="teams-container">
 
-								<h3> Team B: </h3>
-								{teamB}
+								<div className="teamA">
+									<h3> Team A: </h3>
+									<img className="teamA-shirt" src={require('../img/teamA.png')} alt={'red soccer jersey for team A'}/>
+									<div className="teamA-list">
+										{teamA}
+									</div>
+								</div>
+
+								<div className="teamB">
+									<h3> Team B: </h3>
+									<img className="teamB-shirt" src={require('../img/teamB.png')} alt={'red soccer jersey for team A'}/>
+									<div className="teamB-list">
+										{teamB}
+									</div>
+								</div>
+
 							</div>
               :
             	null

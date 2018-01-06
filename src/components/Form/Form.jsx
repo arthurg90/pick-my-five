@@ -33,7 +33,6 @@ submit(e) {
 	change(e, i) {
 		let fields = this.state.fields.slice();
 		fields[i].value = e.target.value;
-		// console.log(fields[i].value);
 		this.setState({fields: fields});
 	}
 
