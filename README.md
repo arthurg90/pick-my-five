@@ -1,7 +1,7 @@
 # Pick My Five
 ### Final project for Develop_Me full stack bootcamp
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+[Online version of the App](http://arthur.developme.training/pick-my-five/).
 
 ## Installation instructions:
 - Download the zip file or clone from https://github.com/arthurg90/pick-my-five
@@ -12,7 +12,6 @@ $cd ../pick-my-five-master
 $npm install
 $npm start or $yarn start
 ```
-
 ### Tech used for the app:
 - React/Redux
 - Html
