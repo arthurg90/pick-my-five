@@ -191,3 +191,11 @@ small {
   padding: 1.5em;
   margin-top: 2.5em;
   font-size: 0.75em; }
+
+/* media queries
+*/
+@media only screen and (max-width: 640px) {
+  .teamA-list,
+  .teamB-list {
+    position: relative;
+    bottom: 14em; } }
