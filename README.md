@@ -91,5 +91,5 @@ If I could improve the app with less time constraints I would like to:
 - Some balancing logic to be applied based on players skill
 - Add an API so that the player teams could be stored more permanently
 - Add some animation features
-- Make it more of a full site rather than just an App
-- Add more pages for using routes/router
+- Improve responsiveness
+- Edit players once they've been added to list
