@@ -20,7 +20,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router basename="/pick-my-five/">
       <App />
     </Router>
   </Provider>,

@@ -158,10 +158,15 @@ small {
   display: flex;
   justify-content: center; }
 
+.teamA,
+.teamB {
+  height: auto;
+  min-height: 100%; }
+
 .teamA li,
 .teamB li {
   color: #fff !important;
-  font-size: 1.5em;
+  font-size: 1em;
   list-style-type: none; }
 
 .teamA h3,
@@ -176,7 +181,7 @@ small {
 
 .teamA-shirt,
 .teamB-shirt {
-  width: 80%; }
+  width: 90%; }
 
 /* Footer elements
 */
