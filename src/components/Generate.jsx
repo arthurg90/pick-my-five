@@ -47,7 +47,7 @@ clicked(e) {
 }
 	render() {
 		const { players } = this.props;
-		//Displaying the first half and second half of the players array as two teams:
+//Displaying the first half and second half of the players array as two teams:
 		const team1 = this.state.shuffled.slice(0,5);
 	  const team2 = this.state.shuffled.slice(5);
 
