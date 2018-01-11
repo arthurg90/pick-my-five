@@ -192,6 +192,13 @@ small {
   margin-top: 2.5em;
   font-size: 0.75em; }
 
+.socialLinks {
+  display: inline-block; }
+
+.git {
+  width: 2em;
+  margin: 0 .5em; }
+
 /* media queries
 */
 @media only screen and (max-device-width: 700px) {
