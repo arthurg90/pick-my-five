@@ -8,11 +8,9 @@ import Form from "./Form/Form";
 const fields = [
 	{ name: "player", value:"", className:"form-control" }
 ];
-// $FlowFixMe
-const Add = ({ onSubmit: any }) => (
+const Add = ({ onSubmit }) => (
 	<div>
 		<h3>Start by adding some player names:</h3>
- {/*$FlowFixMe*/}
 		<Form onSubmit={ onSubmit } className="panel-body" fields={ fields } />
 	</div>
 );
